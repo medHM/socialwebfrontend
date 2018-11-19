@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Liste des auteurs </h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of pageAuteurs">
+      <td>{{c.id}}</td>
+      <td>{{c.nom}}</td>
+      <td>{{c.prenom}}</td>
+      <td>
+        <a (click)="onEditAuteur(c.id)" class="btn btn-link">Editer</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <button type="button" routerLink="/add-auteurs" class="btn btn-info">Ajouter nouveau auteur</button>
+</div>
+

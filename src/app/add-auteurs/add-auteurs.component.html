@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Ajouter un auteur </h2>
+  <form>
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+        <label class="sr-only">Nom</label>
+        <input type="text" [(ngModel)]="auteur.nom" name="nom" class="form-control mb-2" placeholder="Nom">
+      </div>
+      <div class="col-auto">
+        <label class="sr-only">Prenom</label>
+        <input type="text" [(ngModel)]="auteur.prenom" name="prenom" class="form-control mb-2" placeholder="Prenom">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-2" (click)="updateAuteur()">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
