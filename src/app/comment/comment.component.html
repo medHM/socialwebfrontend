@@ -1,0 +1,76 @@
+<!-- Comments -->
+
+<ul class="comments-list" *ngIf="listComments">
+  <li class="comment-item" *ngFor="let c of listComments._embedded.commentaires">
+    <input type="text" name="id"  >{{c.id}}
+    <div class="post__author author vcard inline-items">
+      <img src="../../assets/img/author-page.jpg" alt="author">
+
+      <div class="author-date">
+        <a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a>
+        <div class="post__date">
+          <time class="published" datetime="2004-07-24T18:18">
+            {{c.date|date:'dd/MM/yyyy:HH:mm:ss'}}
+          </time>
+        </div>
+      </div>
+
+      <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../assets/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+        <ul class="more-dropdown">
+          <li>
+            <a href="#">Edit Post</a>
+          </li>
+          <li>
+            <a [routerLink]=""(click)="onDeleteComment(c.id)">Delete Post</a>
+          </li>
+          <li>
+            <a href="#">Turn Off Notifications</a>
+          </li>
+          <li>
+            <a href="#">Select as Featured</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p>{{c.message}}</p>
+
+    <a href="#" class="post-add-icon inline-items">
+      <svg class="olymp-heart-icon"><use xlink:href="../../assets/svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+      <span>3</span>
+    </a>
+    <a href="#" class="reply">Reply</a>
+  </li>
+</ul>
+
+<!-- ... end Comments -->
+
+<a href="#" class="more-comments">View more comments <span>+</span></a>
+
+
+<!-- Comment Form  -->
+
+<form class="comment-form inline-items" #f="ngForm" (ngSubmit)="onAddComment(f)">
+
+  <div class="post__author author vcard inline-items">
+    <img src="../../assets/img/author-page.jpg" alt="author">
+
+    <div class="form-group with-icon-right ">
+      <textarea name="message" class="form-control" placeholder="Ajouter un commantaire..." required="" [(ngModel)]="comment.message"></textarea>
+      <div class="add-options-message">
+        <a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+          <svg class="olymp-camera-icon">
+            <use xlink:href="../../assets/svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-md-2 btn-primary" [disabled]="f.invalid">Post Comment</button>
+
+  <button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel</button>
+
+</form>
+
+<!-- ... end Comment Form  -->

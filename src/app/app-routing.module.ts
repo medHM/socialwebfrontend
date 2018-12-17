@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AuteursComponent} from './auteurs/auteurs.component';
-import {LivresComponent} from './livres/livres.component';
-import {AddAuteursComponent} from './add-auteurs/add-auteurs.component';
-import {EditAuteursComponent} from './edit-auteurs/edit-auteurs.component';
+import {PersonalInformationComponent} from './personal-information/personal-information.component';
+import {AccountSettingsComponent} from './account-settings/account-settings.component';
+import {NewsFeedComponent} from './news-feed/news-feed.component';
+import {YourProfileComponent} from './fragments/your-profile/your-profile.component';
+import {NewsFeedFormComponent} from './news-feed-form/news-feed-form.component';
 
 const routes: Routes = [
-  { path:'auteurs', component:AuteursComponent},
-  { path:'livres', component:LivresComponent},
-  { path:'add-auteurs', component:AddAuteursComponent},
-  { path:'editAuteurs/:id', component:EditAuteursComponent},
-  { path: '', redirectTo:'/auteurs', pathMatch:'full'}
+  { path:'PersonalInformation', component:PersonalInformationComponent},
+  { path:'AccountSettings', component:AccountSettingsComponent},
+  { path:'NewsFeed', component:NewsFeedComponent},
+  { path:'NewsFeedForm', component:NewsFeedFormComponent},
+  { path:'YourProfil', component:YourProfileComponent},
 ];
 
 @NgModule({
